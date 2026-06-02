@@ -6,9 +6,11 @@ import ir.maktab.model.User;
 import ir.maktab.repository.UserRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
-
+@Repository
 public class UserRepositoryImpl implements UserRepository {
 
 

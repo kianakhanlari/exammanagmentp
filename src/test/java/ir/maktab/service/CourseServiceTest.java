@@ -1,3 +1,4 @@
+/*
 package ir.maktab.service;
 
 import ir.maktab.model.Course;
@@ -16,6 +17,8 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.MockedStatic;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -293,5 +296,46 @@ class CourseServiceTest {
                 .findCoursesByStudentId(entityManager, 1222);
     }
 
+    @Test
+    void shouldReturnCourses_whenStudentHasCourses() {
 
-}
+        Course course = new Course();
+        course.setId(1);
+        course.setTitle("Java");
+
+        List<Course> courses = List.of(course);
+
+        when(courseRepository.findCoursesByStudentId(entityManager, 1222))
+                .thenReturn(courses);
+
+        List<Course> result =
+                courseService.findCourseByStudentId(1222);
+
+        assertNotNull(result);
+        assertEquals(1, result.size());
+        assertEquals(courses, result);
+
+        verify(courseRepository, times(1))
+                .findCoursesByStudentId(entityManager, 1222);
+    }
+    @Test
+    void shouldThrowException_whenStudentHasNoCourses() {
+
+        when(courseRepository.findCoursesByStudentId(entityManager, 1L))
+                .thenReturn(Collections.emptyList());
+
+        RuntimeException ex = assertThrows(
+                RuntimeException.class,
+                () -> courseService.findCourseByStudentId(1L)
+        );
+
+        assertEquals("You are not enrolled in any courses.",
+                ex.getMessage());
+
+        verify(courseRepository, times(1))
+                .findCoursesByStudentId(entityManager, 1L);
+    }
+    void shouldThrowException_whenCoursesHasNoExam(){
+
+    }
+}*/

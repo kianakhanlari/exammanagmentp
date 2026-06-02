@@ -7,10 +7,11 @@ import ir.maktab.repository.UserRepository;
 import ir.maktab.util.JpaUtil;
 import ir.maktab.util.ValidationUtil;
 import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class UserService {
     private final UserRepository userRepository;
 

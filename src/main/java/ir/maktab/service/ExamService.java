@@ -3,13 +3,15 @@ package ir.maktab.service;
 import ir.maktab.model.*;
 import ir.maktab.model.dtos.AnswerDto;
 import ir.maktab.repository.ExamRepository;
+
 import ir.maktab.util.JpaUtil;
 import ir.maktab.util.ValidationUtil;
 import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class ExamService {
     private final ExamRepository examRepository;
     private final StudentService studentService;

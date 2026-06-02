@@ -4,7 +4,9 @@ import ir.maktab.model.Student;
 import ir.maktab.repository.StudentRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class StudentRepositoryImpl implements StudentRepository {
 
     @Override

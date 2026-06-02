@@ -3,7 +3,9 @@ package ir.maktab.repository.impl;
 import ir.maktab.model.Teacher;
 import ir.maktab.repository.TeacherRepository;
 import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class TeacherRepositoryImpl implements TeacherRepository {
 
     @Override

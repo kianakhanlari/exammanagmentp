@@ -4,32 +4,39 @@ import ir.maktab.model.*;
 import ir.maktab.model.dtos.*;
 import ir.maktab.service.*;
 import ir.maktab.service.Timer;
-import ir.maktab.util.ApplicationContext;
+
 import ir.maktab.util.ExamFileWriter;
 import ir.maktab.util.Initializer;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.*;
-
+@Component
 public class Menue {
 
     Scanner sc = new Scanner(System.in);
 
     private final UserService userService;
-    private Initializer initializer;
+    private   Initializer initializer;
     private final TeacherService teacherService;
     private final StudentService studentService;
     private final CourseService courseService;
     public final ExamService examService;
 
-    public Menue() {
-        ApplicationContext context = ApplicationContext.getInstant();
-        this.initializer = context.getInitializer();
-        this.userService = context.getUserService();
-        this.teacherService = context.getTeacherService();
-        this.studentService = context.getStudentService();
-        this.courseService = context.getCourseService();
-        this.examService = context.getExamService();
+
+    public Menue(UserService userService,
+                 TeacherService teacherService,
+                 StudentService studentService,
+                 CourseService courseService,
+                 ExamService examService,
+                 Initializer initializer) {
+
+        this.userService = userService;
+        this.teacherService = teacherService;
+        this.studentService = studentService;
+        this.courseService = courseService;
+        this.examService = examService;
+        this.initializer = initializer;
     }
 
     public void mainMenu() {

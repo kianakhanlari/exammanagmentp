@@ -1,3 +1,4 @@
+/*
 package ir.maktab.util;
 
 import ir.maktab.repository.*;
@@ -101,3 +102,4 @@ public class ApplicationContext {
 
 
 }
+*/

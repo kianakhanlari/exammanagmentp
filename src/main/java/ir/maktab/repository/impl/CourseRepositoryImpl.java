@@ -4,9 +4,10 @@ import ir.maktab.model.Course;
 import ir.maktab.repository.CourseRepository;
 import jakarta.persistence.EntityGraph;
 import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public class CourseRepositoryImpl implements CourseRepository {
 
     @Override

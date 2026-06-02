@@ -4,10 +4,13 @@ import ir.maktab.model.Role;
 import ir.maktab.model.Student;
 import ir.maktab.model.dtos.StudentDto;
 import ir.maktab.repository.StudentRepository;
+
 import ir.maktab.util.JpaUtil;
 import ir.maktab.util.ValidationUtil;
 import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StudentService {
 private  final StudentRepository studentRepository;
 

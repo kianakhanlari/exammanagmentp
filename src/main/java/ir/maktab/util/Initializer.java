@@ -3,10 +3,11 @@ package ir.maktab.util;
 import ir.maktab.model.Role;
 import ir.maktab.model.User;
 import ir.maktab.service.UserService;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-
+@Component
 public class Initializer {
     private  final UserService userService;
 

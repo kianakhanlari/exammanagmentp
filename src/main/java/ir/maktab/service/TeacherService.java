@@ -5,10 +5,15 @@ import ir.maktab.model.Role;
 import ir.maktab.model.Teacher;
 import ir.maktab.model.dtos.TeacherDto;
 import ir.maktab.repository.TeacherRepository;
+
 import ir.maktab.util.JpaUtil;
 import ir.maktab.util.ValidationUtil;
 import jakarta.persistence.EntityManager;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 
+@Service
+@Scope()
 public class TeacherService {
     private final TeacherRepository teacherRepository;
 

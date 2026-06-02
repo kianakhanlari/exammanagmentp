@@ -8,10 +8,11 @@ import ir.maktab.repository.CourseRepository;
 import ir.maktab.util.JpaUtil;
 import ir.maktab.util.ValidationUtil;
 import jakarta.persistence.EntityManager;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class CourseService {
 
     private final CourseRepository courseRepository;

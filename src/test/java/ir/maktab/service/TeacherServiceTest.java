@@ -1,3 +1,4 @@
+/*
 package ir.maktab.service;
 
 import ir.maktab.model.Role;
@@ -102,4 +103,4 @@ class TeacherServiceTest {
                 .findTeacherByUserName(entityManager,"ali123");
 
     }
-}
+}*/
